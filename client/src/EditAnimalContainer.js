@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
+import EditAnimalForm from './EditAnimalForm';
 
 var EditAnimalContainer = React.createClass({
   getInitialState: function() {
@@ -26,6 +27,12 @@ var EditAnimalContainer = React.createClass({
       self.setState({ name: data.name, species: data.species })
     })
   },
+  onFieldChange(fieldName, fieldValue) {
+    const newState = {};
+    newState[fieldName] = fieldValue;
+    this.setState(newState);
+  },
+
   handleSubmit(){
     $.ajax({
       url: '/api/animals/' + this.props.id,
@@ -36,12 +43,13 @@ var EditAnimalContainer = React.createClass({
     })
   },
   render: function() {
-    return (
-      <div className="jumbotron">
-        <h1 className="display-3">Zootopia</h1>
-        <p className="lead">{ this.state.name ? this.state.name : "nothing yet"}</p>
-      </div>
-    )
+    return <EditAnimalForm handleSubmit={this.handleSubmit}
+            onFieldChange={this.onFieldChange}
+            updateName={this.updateName}
+            updateSpecies={this.updateSpecies}
+            name={this.state.name}
+            species={this.state.species}
+          />
   }
 })
 
