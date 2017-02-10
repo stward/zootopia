@@ -17,7 +17,7 @@ var App = React.createClass({
     if(this.state.activeComponent === 'home'){
       return <Home />
     } else if(this.state.activeComponent === 'viewAll'){
-      return <AnimalsContainer />
+      return <AnimalsContainer/>
     } else if(this.state.activeComponent === 'post') {
       return <PostAnimalContainer />
     } else {

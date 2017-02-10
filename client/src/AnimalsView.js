@@ -7,7 +7,7 @@ var AnimalsView = function(props){
       <ul>
         {
           props.animals.map(function(a){
-            return <li> { a.name  + " the " + a.species} </li>
+            return <li> { a.name  + " the " + a.species} <button onClick={props.deleteAnimal.bind(this,a._id)} className="btn btn-danger"> Delete </button></li>
           })
         }
       </ul>
