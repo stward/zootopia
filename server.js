@@ -9,11 +9,7 @@ var animalRoutes = require('./routes/animals');
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(bodyParser.json()); // for parsing application/json
 
-app.set('port', (process.env.PORT || 3000));
-
-app.get('/', function (req, res) {
-  res.send({message: "It's alive!!!"});
-});
+app.set('port', (process.env.PORT || 3001));
 
 app.use('/api/animals', animalRoutes);
 
