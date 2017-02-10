@@ -32,7 +32,9 @@ var AnimalsContainer = React.createClass({
     })
   },
   render: function() {
-    return this.state.animals ? <AnimalsView deleteAnimal={this.deleteAnimal} animals={this.state.animals}/> : <div> Loading... </div>
+    return this.state.animals ? <AnimalsView toggleComp={this.props.toggleComp}
+                                  deleteAnimal={this.deleteAnimal}
+                                  animals={this.state.animals}/> : <div> Loading... </div>
   }
 });
 
