@@ -5,7 +5,7 @@ var Router = new express.Router();
 
 Router.route('/')
   .get(function(req, res){
-    Animal.find(err, animals) => {
+    Animal.find(function(err, animals){
       if (err) {
         res.json(err, 'ERROR');
       } else {
@@ -37,7 +37,7 @@ Router.route('/:id')
       }
     });
   })
-  .put((req, res) => {
+  .put(function(req, res){
     Animal.findById(req.params.id, function(err, animal){
       if(err) {
         res.json({ message: 'could not find course' })
