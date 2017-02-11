@@ -1,1 +1,3 @@
-console.log("Hello, world!");
+function deleteAnimal(id){
+  console.log(id)
+}
