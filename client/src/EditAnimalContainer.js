@@ -21,7 +21,7 @@ var EditAnimalContainer = React.createClass({
   loadAnimalFromServer() {
     var self = this;
     $.ajax({
-      url: '/api/animals/' + this.props.id,
+      url: '/api/animals/' + this.props.params.animalId,
       method: 'GET',
     }).done(function(data){
       self.setState({ name: data.name, species: data.species })
@@ -35,7 +35,7 @@ var EditAnimalContainer = React.createClass({
 
   handleSubmit(){
     $.ajax({
-      url: '/api/animals/' + this.props.id,
+      url: '/api/animals/' + this.props.params.animalId,
       method: 'PUT',
       data: { name: this.state.name, species: this.state.species }
     }).done(function(data){

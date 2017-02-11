@@ -20,7 +20,7 @@ var EditAnimalForm = function(props) {
               value={props.species} type="text" className="form-control" id="" placeholder={props.species}
             />
           </fieldset>
-          <button type="submit" className="btn btn-primary my-primary-btn">Create</button>
+          <button type="submit" className="btn btn-primary my-primary-btn">Save</button>
         </form>
       </div>
     </div>

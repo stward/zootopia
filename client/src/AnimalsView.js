@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 var AnimalsView = function(props){
   return (
@@ -12,7 +13,7 @@ var AnimalsView = function(props){
                 Delete
               </button>
               <button className="btn btn-warning">
-                Edit
+                <Link to={"/edit/" + a._id}> Edit Animal </Link>
               </button>
             </li>
           })
