@@ -9,16 +9,22 @@ app.use(express.static('public')) // gives our app access to our static code in 
 app.set('view engine', 'ejs');
 app.set('port', (process.env.PORT || 3000));
 
-var daysOfTheWeek = ["Sunday", "Monday",
-            "Tuesday", "Wednesday",
-            "Thursday", "Friday",
-            "Saturday"
-          ];
-
 app.get('/', function (req, res) {
-  res.render('index', {today: daysOfTheWeek[ new Date().getDay() ]});
+  res.render('index');
 });
 
+app.get('/view', function (req, res) {
+  res.render('view');
+});
+
+app.get('/edit', function (req, res) {
+  res.render('edit');
+});
+
+
+app.get('/post', function (req, res) {
+  res.render('post');
+});
 
 app.listen(app.get('port'), function(){
   console.log(`🔥🔥🔥🔥🔥🔥 at: http://localhost:${app.get('port')}/`);
