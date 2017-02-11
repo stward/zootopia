@@ -8,7 +8,6 @@
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "babel-node server.js",
     "client": "babel-node start-client.js"
-
   },
   "repository": {
     "type": "git",
@@ -22,6 +21,7 @@
   "homepage": "https://github.com/fresh5447/zootopia#readme",
   "dependencies": {
     "body-parser": "^1.16.0",
+    "concurrently": "^3.2.0",
     "express": "^4.14.1",
     "mongoose": "^4.8.1"
   }
