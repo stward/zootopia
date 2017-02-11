@@ -2,6 +2,11 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 
+var animalRoutes = require('./routes/animals');
+
+var mongoose = require('mongoose');
+mongoose.connect("mongodb://localhost/zootopia");
+
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(bodyParser.json()); // for parsing application/json
 app.use(express.static('public')) // gives our app access to our static code in public folder
@@ -25,6 +30,8 @@ app.get('/edit', function (req, res) {
 app.get('/post', function (req, res) {
   res.render('post');
 });
+
+app.use('/api/animals', animalRoutes);
 
 app.listen(app.get('port'), function(){
   console.log(`🔥🔥🔥🔥🔥🔥 at: http://localhost:${app.get('port')}/`);
