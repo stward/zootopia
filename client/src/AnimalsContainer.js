@@ -8,7 +8,7 @@ var AnimalsContainer = React.createClass({
       animals: null
     }
   },
-  componentDidMount() {
+  componentWillMount() {
     this.loadAnimalsFromServer();
   },
   deleteAnimal(id){
@@ -22,6 +22,7 @@ var AnimalsContainer = React.createClass({
     })
   },
   loadAnimalsFromServer: function() {
+    console.log("ABOUT TO LOAD??")
     var self = this;
     $.ajax({
       url: '/api/animals',
@@ -32,7 +33,7 @@ var AnimalsContainer = React.createClass({
     })
   },
   render: function() {
-    return this.state.animals ? <AnimalsView toggleComp={this.props.toggleComp}
+    return this.state.animals ? <AnimalsView
                                   deleteAnimal={this.deleteAnimal}
                                   animals={this.state.animals}/> : <div> Loading... </div>
   }

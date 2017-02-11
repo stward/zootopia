@@ -11,7 +11,7 @@ var AnimalsView = function(props){
               <button onClick={props.deleteAnimal.bind(this, a._id)} className="btn btn-danger">
                 Delete
               </button>
-              <button onClick={props.toggleComp.bind(this,'edit', a._id)} className="btn btn-warning">
+              <button className="btn btn-warning">
                 Edit
               </button>
             </li>

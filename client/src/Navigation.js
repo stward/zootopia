@@ -8,9 +8,9 @@ var NavBar = function(props){
         </div>
         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul className="nav navbar-nav">
-            <li onClick={props.toggleComp.bind(null, 'home')}><a>Home</a></li>
-            <li onClick={props.toggleComp.bind(null, 'viewAll')}><a>Animals</a></li>
-            <li onClick={props.toggleComp.bind(null, 'post')}><a>Post</a></li>
+            <li><a>Home</a></li>
+            <li><a>Animals</a></li>
+            <li><a>Post</a></li>
           </ul>
         </div>
       </div>
