@@ -33,7 +33,7 @@ var App = React.createClass({
     return (
       <div>
         <NavBar toggleComp={this.toggleComp}/>
-        { this.renderComponent() }
+        { this.props.children }
       </div>
     )
   }
