@@ -13,6 +13,9 @@
     <div class="jumbotron">
       <h1 class="display-3">Zootopia</h1>
       <p class="lead">View All the Animals</p>
+      <% for(var i=0; i < data.length; i++) {%>
+         <li><%= data[i].name + " " + data[i].species%></li>
+      <% } %>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

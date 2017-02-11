@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 var app = express();
 
 var animalRoutes = require('./routes/animals');
+var Animal = require('./models/animal');
 
 var mongoose = require('mongoose');
 mongoose.connect("mongodb://localhost/zootopia");
@@ -19,7 +20,13 @@ app.get('/', function (req, res) {
 });
 
 app.get('/view', function (req, res) {
-  res.render('view');
+  Animal.find(function(err, animals){
+    if (err) {
+      res.json(err, 'ERROR');
+    } else {
+      res.render('view', { data: animals });
+    }
+  });
 });
 
 app.get('/edit', function (req, res) {
