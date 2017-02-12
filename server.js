@@ -36,7 +36,8 @@ require('./config/passport')(passport); // pass passport for configuration
 require('./routes/userAuth.js')(app, passport); // load our routes and pass in our app and fully configured passpo
 
 app.get('/', function (req, res) {
-  res.render('index');
+  var user = req.user ? req.user : null;
+  res.render('index', { user: user });
 });
 
 app.get('/view', function (req, res) {

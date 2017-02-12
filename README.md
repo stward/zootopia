@@ -10,6 +10,8 @@ Learn full stack javascript by doing.
 
 * __EJS-solution__ Functional code
 
+https://scotch.io/tutorials/easy-node-authentication-setup-and-local
+
 ----
 
 * __React-start__ (README, The starting point comes with a functional backend, Step one of the solution will be learning how to blend in react create app)
