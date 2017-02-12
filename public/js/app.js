@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  console.log("DOC LOADED");
   function delAnimal(e) {
     e.preventDefault();
     var animalId = $(this).closest('li').attr('id')

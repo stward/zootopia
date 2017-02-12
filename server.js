@@ -29,8 +29,14 @@ app.get('/view', function (req, res) {
   });
 });
 
-app.get('/edit', function (req, res) {
-  res.render('edit');
+app.get('/edit/:animalId', function (req, res) {
+  Animal.findById( req.params.animalId, function(err, animal){
+    if (err) {
+      res.json(err, 'ERROR');
+    } else {
+      res.render('edit', { data: animal });
+    }
+  });
 });
 
 
