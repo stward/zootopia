@@ -20,13 +20,13 @@ Learn full stack javascript by doing.
 * __EJS-start__ This is the starting point for building out a full stack javascript app using Node, Express, Mongo, Mongoose, and EJS.
 
 
-* __EJS-solution__ Functional code __COMPLETE__
+* __EJS-solution__ Functional code __IN PROGRESS__
 
 ----
 
 * __React-start__ (README, The starting point comes with a functional backend, Step one of the solution will be learning how to blend in react create app)
 
-* __React-solution__ Basic Solution using React COMPLETE
+* __React-solution__ Basic Solution using React __COMPLETE__
 
 * __React-solution-react-router__ This is the preferred solution. __COMPLETE__
 
