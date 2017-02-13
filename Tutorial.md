@@ -62,7 +62,7 @@ Commit changes to github
 
 ## Step 3: Creating the home view
 
-Import react-bootstrap for later css rendering `npm install --save react-bootstrap`
+Import react-bootstrap with terminal for later css rendering `npm install --save react-bootstrap`
 
 Create a stateless component in new file `Home.js` that will render a heading, a viewAll button, and a postNew button.
 ```
@@ -85,3 +85,55 @@ Import Home file into App.js
 `import Home from './Home';`
 
 Commit changes to github
+
+## Step 4: Viewing all animals
+
+Create `AnimalsContainer.js` in src directory
+
+Import AnimalsTable view `import AnimalsTable from './AnimalsTable'`
+
+Create a stateful component that will display all animals imported from AnimalsTable, and set initial state
+```
+var AnimalsContainer = React.createClass({
+  getInitialState: function() {
+    return ({animals: null})
+  }
+})
+```
+
+Install jquery with terminal `npm install --save jquery`
+
+Import jquery `import $ from 'jquery';`
+
+Write function to get animal data from server before render function is run
+```
+componentWillMount: function() {
+  this.getAnimalsFromServer();
+},
+getAnimalsFromServer: function() {
+  var that = this
+  $.ajax({
+    url: '/api/animals',
+    method: 'GET'
+  }).done(function(data) {
+    that.setState({animals: data})
+  })
+}
+```
+
+Send to the view
+```
+render: function() {
+  return (
+    <div>
+      <AnimalsTable animals={this.state.animals} />
+    </div>
+  )
+}
+```
+
+Commit to github
+
+## Step 5: Creating the AnimalsTable view
+
+Create AnimalsTable.js file
