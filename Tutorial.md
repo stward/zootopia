@@ -59,3 +59,29 @@ render: function() {
 ```
 
 Commit changes to github
+
+## Step 3: Creating the home view
+
+Import react-bootstrap for later css rendering `npm install --save react-bootstrap`
+
+Create a stateless component in new file `Home.js` that will render a heading, a viewAll button, and a postNew button.
+```
+import React from 'react'
+
+var Home = function(props) {
+  return (
+    <div>
+      <h1>Zootopia</h1>
+      <button onClick={() => props.updateActiveComponent('viewAll')}>View All Animals</button>
+      <button onClick={() => props.updateActiveComponent('postNew')}>Post New Animal</button>
+    </div>
+  )
+}
+
+export default Home
+```
+
+Import Home file into App.js
+`import Home from './Home';`
+
+Commit changes to github
