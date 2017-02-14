@@ -16,13 +16,29 @@ var AnimalsContainer = React.createClass({
       url: '/api/animals',
       method: 'GET'
     }).done(function(data) {
+      console.log(data);
       that.setState({animals: data})
     })
+  },
+  deleteHandler: function(id) {
+    $.ajax({
+      url: '/api/animals/' + id,
+      method: 'DELETE'
+    }).done(function(data) {
+      console.log('deleted animal with id: ' + id);
+    })
+    var newData = this.state.animals.filter(function(item) {
+      return item._id !== id
+    })
+    this.setState({animals: newData})
+  },
+  updateHandler: function(id) {
+    this.props.updateActiveComponent('editAnimal', id)
   },
   render: function() {
     return (
       <div>
-        <AnimalsTable animals={this.state.animals} />
+        {this.state.animals ? <AnimalsTable animals={this.state.animals} deleteHandler={this.deleteHandler} updateHandler={this.updateHandler} /> : null}
       </div>
     )
   }
