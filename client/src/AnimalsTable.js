@@ -1,5 +1,6 @@
 import React from 'react';
 import {Table, Button} from 'react-bootstrap';
+import {Link} from 'react-router'
 
 function AnimalsTable(props) {
   var animals = props.animals.map(function(item) {
@@ -7,7 +8,7 @@ function AnimalsTable(props) {
              <td>{item.name}</td>
              <td>{item.species}</td>
              <td><Button bsStyle="primary" onClick={(id) => props.deleteHandler(item._id)}>Delete</Button></td>
-             <td><Button bsStyle="primary" onClick={(id) => props.updateHandler(item._id)}>Update</Button></td>
+             <td><Link to={'/editAnimal/' + item._id} className='btn btn-primary'>Edit Animal</Link></td>
            </tr>;
   });
   return (

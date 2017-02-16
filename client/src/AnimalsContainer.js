@@ -16,7 +16,6 @@ var AnimalsContainer = React.createClass({
       url: '/api/animals',
       method: 'GET'
     }).done(function(data) {
-      console.log(data);
       that.setState({animals: data})
     })
   },
@@ -32,13 +31,10 @@ var AnimalsContainer = React.createClass({
     })
     this.setState({animals: newData})
   },
-  updateHandler: function(id) {
-    this.props.updateActiveComponent('editAnimal', id)
-  },
   render: function() {
     return (
       <div>
-        {this.state.animals ? <AnimalsTable animals={this.state.animals} deleteHandler={this.deleteHandler} updateHandler={this.updateHandler} /> : null}
+        {this.state.animals ? <AnimalsTable animals={this.state.animals} deleteHandler={this.deleteHandler} /> : null}
       </div>
     )
   }
