@@ -3,9 +3,6 @@
 Learn full stack javascript by doing.
 
 ----
-#### Branches
-
-----
 
 * __Master__ (README.md)
 
@@ -15,10 +12,7 @@ Learn full stack javascript by doing.
 
 * __Static-solution__ Fully functional code for that static start code base. __NOT STARTED__
 
-  ----
-
-* __EJS-start__ This is the starting point for building out a full stack javascript app using Node, Express, Mongo, Mongoose, and EJS.
-
+* __EJS-start__ This is the starting point for building out a full stack javascript app using Node, Express, Mongo, Mongoose, and EJS. Your beginning code base is a simple express server that serves an index.ejs page.
 
 * __EJS-solution__ Functional code __IN PROGRESS__
 
