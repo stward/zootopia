@@ -15,9 +15,18 @@
       <p class="lead">Learn JavaScript by doing</p>
     </div>
 
-    <div>
-      <a class='btn btn-primary' href='login'>Log In</a>
-    </div>
+    <% if (message.length > 0) { %>
+      <div class="alert"><%= message %></div>
+    <% } %>
+
+    <div class="alert alert-info"><%= user ? 'The current user is ' + user.local.username.toUpperCase() : 'No user found' %></div>
+
+    <form class="form form-inline" action="/update" method="POST">
+      <input type="text" class="form-control" name="city" placeholder="City" value=<%= user.location.city %> />
+      <input type="text" class="form-control" name="state" placeholder="State" value=<%= user.location.state %> />
+      <input type="text" class="form-control" name="zip" placeholder="Zip" value=<%= user.location.zip %> />
+      <input type="submit" class="btn btn-primary" />
+    </form>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>

@@ -12,7 +12,7 @@ var cookieParser = require('cookie-parser');
 var passport = require('passport');
 // Flash messages
 var flash = require('connect-flash');
-// Request looging
+// Request logging
 var morgan = require('morgan');
 
 var Animal = require('./models/animals');
