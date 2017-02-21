@@ -45,7 +45,9 @@ module.exports = function (app, passport) {
   }));
 
   app.get('/profile', isLoggedIn, function(req, res) {
-    User.findById(req.user._id).populate('location').exec(function(err, data) {
+    User.findById(req.user._id)
+      .populate('location')
+      .exec(function(err, data) {
       if (err) {
         console.log(err);
         // res.render('profile', {user: req.user, message: req.flash('updateMessage')})
