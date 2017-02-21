@@ -26,7 +26,7 @@ app.use(cookieParser())
 app.use(session({secret: 'asdf'})) // session secret
 app.use (passport.initialize())
 app.use (passport.session())
-app.use(flash)
+app.use(flash())
 
 require('./config/passport')(passport)
 require('./routes/userAuth')(app, passport)
